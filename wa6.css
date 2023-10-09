@@ -1,6 +1,6 @@
 body {
-    background-image: url(folsom.jpeg);
-}
+    background-image: url("folsom.jpeg");
+    background-repeat: no-repeat;
 
 #header {
     position: fixed;
