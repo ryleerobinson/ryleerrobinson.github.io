@@ -19,14 +19,14 @@ article {
   height: 297mm;
   margin: 20px auto;
   position: relative;
-  background-image: url("top-image.png");
+  background-image: url("img/top-image.png");
   background-repeat: no-repeat;
   background-position:top;
   background-color: white;
   border-top: 1mm solid red;
   border-bottom: 1mm solid red;
 
-  background-image:url("bottom-image.png");
+  background-image:url("img/bottom-image.png");
   background-repeat:no-repeat;
   background-position:bottom;
 
@@ -56,7 +56,7 @@ h1 {
 /* Your CSS below here */
 
 h1 {
-  background-image: url("logo.png");
+  background-image: url("img/logo.png");
   filter: drop-shadow(10px 10px 10px black);
 
 
