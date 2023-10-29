@@ -1,12 +1,12 @@
 @media only screen and (min-width: 400px){
     body{
         background-color: black;
-        color:white;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color:antiquewhite;
+        font-family: 'Times New Roman', 'Arial Narrow', Arial, sans-serif;
     }
 
     .logo{
-        background-color: white;
+        background-color: antiquewhite;
         position:relative;
         left: 0%;
         top: 0;
@@ -106,7 +106,7 @@
     }
 
     .ticket p:hover{
-        color: white;
+        color: antiquewhite;
     }
 
 
@@ -167,12 +167,12 @@
 @media only screen and (max-width: 400px){
     body{
         background-color: #000435;
-        color:white;
+        color:antiquewhite;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     .logo{
-        background-color: white;
+        background-color: antiquewhite;
         position:relative;
         left: 0%;
         top: 0;
@@ -291,7 +291,7 @@
     }
 
     .ticket p:hover{
-        color: white;
+        color: antiquewhite;
     }
 
 
