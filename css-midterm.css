@@ -1,0 +1,322 @@
+@media only screen and (min-width: 400px){
+    body{
+        background-color: #000435;
+        color:white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .logo{
+        background-color: white;
+        position:relative;
+        left: 0%;
+        top: 0;
+        width: 100%;
+    }
+
+    .logo h1{
+        color: #000435;
+        position:relative;
+        left: 5%;
+        text-align: left;
+        font-size: 50px;
+        padding:10px;
+    }
+
+    .logo h2{
+        color: goldenrod;
+        position:relative;
+        top: 0;
+        right: 5%;
+        text-align: right;
+        font-size: 40px;
+        padding:10px;
+    }
+
+
+
+    nav{
+        position: absolute;
+        width: 20%;
+        height: 60%;
+        top: 30%;
+        display:flex;
+        background-color: antiquewhite;
+        flex-direction: column;
+    }
+
+    nav a{
+        position:relative;
+        top: 5%;
+        left: 10%;
+        width:30%;
+        text-align: left;
+        color:#000435;
+        font-size: 100%;
+        padding: 10px;
+    }
+
+    nav a:hover{
+        color: goldenrod;
+    }
+
+
+
+    .grid{
+        position:absolute;
+        width: 40%;
+        display: flex;
+        top: 35%;
+        left: 25%;
+        flex-direction: column;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .description h2{
+        display: flex;
+        justify-content: space-between;
+        font-size: 32px;
+    }
+
+    .description h3{
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+    }
+
+
+
+    .ticket{
+        position: relative;
+        color:black;
+        background-color: goldenrod;
+        height: 55px;
+        width: 140px;
+    }
+
+    .ticket p{
+        color:black;
+        font:15px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 55px;
+    }
+
+    .ticket p:hover{
+        color: white;
+    }
+
+
+
+    .dates{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dates h2{
+        font-size: 150%;
+    }
+
+    .dates h3{
+        font-size: 100%;
+    }
+
+    .dates h4{
+        font-size: 90%;
+    }
+
+    .dates p{
+        font-size: 80%;
+    }
+
+
+
+
+    img{
+        width: 10vw;
+        height: 20vh;
+        padding: 1px;
+    }
+
+    .layer1{
+        position:fixed;
+        bottom: 40vh;
+        right: 10vw;
+    }
+
+    .layer2{
+        position:fixed;
+        bottom: 20vh;
+        right: 5vw;
+    }
+
+    .layer3{
+        position:fixed;
+        bottom:0;  
+        right:0;  
+    }
+}
+
+
+
+
+@media only screen and (max-width: 400px){
+    body{
+        background-color: #000435;
+        color:white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .logo{
+        background-color: white;
+        position:relative;
+        left: 0%;
+        top: 0;
+        width: 100%;
+    }
+
+    .logo h1{
+        color: #000435;
+        position:relative;
+        left: 5%;
+        text-align: left;
+        font-size: 40px;
+        padding:10px;
+    }
+
+    .logo h2{
+        color: goldenrod;
+        position:relative;
+        top: 0;
+        right: 5%;
+        text-align: right;
+        font-size: 30px;
+        padding:10px;
+    }
+
+
+
+    nav{
+        position: absolute;
+        width: 20%;
+        height: 100%;
+        top: 30%;
+        display:flex;
+        background-color: antiquewhite;
+        flex-direction: column;
+    }
+
+    nav a{
+        position:relative;
+        top: 5%;
+        left: 10%;
+        width:30%;
+        text-align: left;
+        color:#000435;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    nav a:hover{
+        color: goldenrod;
+    }
+
+
+
+    .grid{
+        position:absolute;
+        width: 40%;
+        display: flex;
+        top: 40%;
+        left: 25%;
+        flex-direction: column;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .description h2{
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+
+    .description h3{
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+    }
+
+    .dates{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dates h2{
+        font-size: 150%;
+    }
+
+    .dates h3{
+        font-size: 100%;
+    }
+
+    .dates h4{
+        font-size: 90%;
+    }
+
+
+
+
+    .ticket{
+        position: relative;
+        color:black;
+        background-color: goldenrod;
+        height: 55px;
+        width: 140px;
+    }
+
+    .ticket p{
+        color:black;
+        font:15px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 55px;
+    }
+
+    .ticket p:hover{
+        color: white;
+    }
+
+
+
+    img{
+        width: 10vw;
+        height: 20vh;
+        padding: 1px;
+    }
+
+    .layer1{
+        position:fixed;
+        bottom: 40vh;
+        right: 10vw;
+    }
+
+    .layer2{
+        position:fixed;
+        bottom: 20vh;
+        right: 5vw;
+    }
+
+    .layer3{
+        position:fixed;
+        bottom:0;  
+        right:0%;  
+    }
+}
