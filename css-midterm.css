@@ -23,7 +23,7 @@
     }
 
     .logo h2{
-        color: red;
+        color: maroon;
         position:relative;
         top: 0;
         right: 5%;
@@ -56,7 +56,7 @@
     }
 
     nav a:hover{
-        color: red;
+        color: maroon;
     }
 
 
@@ -92,7 +92,7 @@
     .ticket{
         position: relative;
         color:black;
-        background-color: red;
+        background-color: maroon;
         height: 55px;
         width: 140px;
     }
@@ -189,7 +189,7 @@
     }
 
     .logo h2{
-        color: red;
+        color: maroon;
         position:relative;
         top: 0;
         right: 5%;
@@ -222,7 +222,7 @@
     }
 
     nav a:hover{
-        color: red;
+        color: maroon;
     }
 
 
@@ -277,7 +277,7 @@
     .ticket{
         position: relative;
         color:black;
-        background-color: red;
+        background-color: maroon;
         height: 55px;
         width: 140px;
     }
