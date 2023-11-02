@@ -7,8 +7,6 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-<script src="wa10.html"></script>
-
 let storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When :insertx: got to :inserty:, :insertx: stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 const insertX = ["Yo mama", "Grand-pappy", "Mee-Maw"]; //people
 const insertY = ["your mom's house", "McDonald's play place", "The psych ward"]; //places
@@ -43,5 +41,5 @@ function result() {
   story.textContent = newStory;
   story.style.visibility = 'visible';
 
-  
+
 }
