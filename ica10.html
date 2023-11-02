@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-
     <style>
-        #output {
-            font-size: 80px; /* Adjust the font size as needed */
-            color: rgb(135, 135, 139);    /* Change the color as needed */
-            justify-content: center;
+        #button {
+            border: 5px solid black;
+            border-radius: 50px;
+            background-color: white;
+            padding: 25px 50px;
+            width: 300px;
+            font-size: 75px;
+            text-align: center;
         }
+
     </style>
-
 </head>
-
 <body>
-    <button type="button">SUPRISE</button>
-    <button type="button" id="luckyNumber">Lucky Number?</button>
-    <div id="output" ></div>
+    <div id="button">
+        <p>Click it or ticket!</p>
+    </div>
+<br>
+    <div id="takeSurvey"></div>
+        <form id="survey">
+        <select id = "options">
+            <option value = "">What is your favorite pizza topping?</option>
+            <option value = "respect.">pepperoni</option>
+            <option value = "chill.">sausage</option>
+            <option value = "you're hot.">ham & pineapple</option>
+            <option value = "ya sure?">peppers</option>
+        </select>
+     </form>
+    <p id="answer"></p>
+    </div>
 
     <script>
-        const surpriseButton = document.querySelector("button");
-        const luckyNumberButton = document.getElementById("luckyNumber");
+        console.log("Hello, World!");
+        let button = document.querySelector("#button");
+        //console.log(btn);
 
-        surpriseButton.addEventListener("click", colors);
-        luckyNumberButton.addEventListener("click", luckyNumber);
+        function changeBTN() {
+            // console.log("This Worked!");
+            button.textContent = "NNNNICE";
+            button.style.backgroundColor = "black";
+            button.style.border = "20px black";
+            button.style.color = "white";
+            button.style.padding = "100px 175px"; 
+        }
+        button.addEventListener('click', changeBTN);
 
-        function colors() {
-            const colors = ["#0A0908", "#22333B", "#EAE0D5", "#C6AC8F", "#C6AC8F", "#3A7A97"];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.backgroundColor = randomColor;
+
+        document.getElementById("survey").onchange=function() {
+            option = document.getElementById("options").value;
+            document.getElementById("answer").innerHTML = option;
         }
 
-        function luckyNumber() {
-            const randomNumber = Math.floor(Math.random() * 100) + 1;
-            console.log(`Random Number: ${randomNumber}`);
-            const outputElement = document.getElementById("output");
-            outputElement.innerHTML = `${randomNumber}`;
-        }
+
     </script>
-</body>
 
+</body>
 </html>
