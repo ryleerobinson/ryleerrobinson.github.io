@@ -4,7 +4,7 @@ const thumbBar = document.querySelector('.thumb-bar');
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
-const fileNames = ["images/pic.jpeg", "images/pic2.jpeg", "images/pic3.jpeg", "images/pic4.jpeg", "images/pic5.jpeg"];
+const fileNames = ["./images/pic1.jpeg", "./images/pic2.jpeg", "./images/pic3.jpeg", "./images/pic4.jpeg", "./images/pic5.jpeg"];
 const fileAlts = ["1", "2", "3", "4", "5"];
 
 for (let i = 0; i < fileNames.length; i++){
