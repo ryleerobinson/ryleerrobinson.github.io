@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>JSON: Task 1</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON's Cats</title>
     <style>
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
+        p {
+          color: purple;
+          margin: 0.5em 0;
+        }
+  
+        * {
+          box-sizing: border-box;
+        }
     </style>
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-
-  <body>
-
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
     <section class="preview">
 
 
 
     </section>
-
-  </body>
-  <script>
+</body>
+<script>
     const section = document.querySelector('section');
 
     let para1 = document.createElement('p');
@@ -37,30 +35,35 @@
     fetch(requestURL)
     .then(response => response.text())
     .then(text => displayCatInfo(text))
-
+    
     function displayCatInfo(catString) {
       let total = 0;
       let male = 0;
 
-      catData.forEach(cat => {
-          if (cat.mother) {
-            mothers.push(cat.mother);
-          }
-
-          // Check if 'sex' property exists and count kittens
-          if (cat.sex) {
-            totalKittens++;
-            if (cat.sex === 'male') {
-              maleKittens++;
+      // Add your code here
+      console.log(catString);
+      const catObject = JSON.parse(catString);
+      console.log(catObject.length);
+      console.log(catObject[0].kittens.length);
+      for(let i = 0; i < catObject.length-1; i++){
+            motherInfo += catObject[i].name + ", ";
+            for(let j = 0; j < catObject[i].kittens.length; j++){
+                total+=1;
+                if(catObject[i].kittens[j].gender=="m"){
+                    male+=1;
+                }
             }
-          }
-        });
+      }
+      motherInfo += " and " + catObject[catObject.length-1].name;
+      for(let j1 = 0; j1 < catObject[catObject.length-1].kittens.length; j1++){
+                total+=1;
+                if(catObject[catObject.length-1].kittens[j1].gender=="m"){
+                    male+=1;
+                }
+      }
+      kittenInfo = "The total number of kittens is " + total + ". There are " + male + " male kittens and " + (total-male) + " female kittens";
 
-        // Join mother names with commas
-        motherInfo += mothers.join(', ');
-
-        // Create kittenInfo string
-        kittenInfo = `Total kittens: ${totalKittens}, Male kittens: ${maleKittens}, Female kittens: ${totalKittens - maleKittens}`;
+      // Don't edit the code below here!
 
       para1.textContent = motherInfo;
       para2.textContent = kittenInfo;
@@ -68,6 +71,5 @@
 
     section.appendChild(para1);
     section.appendChild(para2);
-  </script>
-
+</script>
 </html>
