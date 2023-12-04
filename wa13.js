@@ -1,76 +1,194 @@
-var obj = new Object();
-//Problem 1
 
-var Sam = new Object();
-var Mary = new Object();
-var Bill = new Object();
-Sam.name = "Sam";
-Sam.department = "Tech";
-Sam.designation = "Manager";
-Sam.salary = 40000;
-Sam.raise = true;
-
-Mary.name = "Mary";
-Mary.department = "Finance";
-Mary.designation = "Trainee";
-Mary.salary = 18500;
-Mary.raise = true;
-
-Bill.name = "Bill";
-Bill.department = "HR";
-Bill.designation = "Executive";
-Bill.salary = 21200;
-Bill.raise = false;
-
-console.log(Sam);
-console.log(Mary);
-console.log(Bill);
-
-//Problem 2
-obj.companyName = "Tech Stars";
-obj.website = "www.techstars.site";
-obj.employees = [Sam,Mary,Bill];
-
-console.log(obj);
-
-//Problem 3
-var Anna = new Object();
-Anna.name = "Anna";
-Anna.department = "Tech";
-Anna.designation = "Executive";
-Anna.salary = 25600;
-Anna.raise = false;
-
-obj.employees.push(Anna);
-
-console.log(obj);
-
-//Probelm 4
-var total = 0;
-for(employee of obj.employees){
-    total += employee.salary;
+console.log("Question 1")
+const q1e1 = {
+    "name": "Sam",
+    "department": "Tech",
+    "designation": "Manager",
+    "salary": 40000,
+    "raiseEligible": true,
 }
-console.log(total);
+const q1e2 = {
+    "name": "Mary",
+    "department": "Finance",
+    "designation": "Trainee",
+    "salary": 18500,
+    "raiseEligible": true,
+}
+const q1e3 = {
+    "name": "Bill",
+    "department": "HR",
+    "designation": "Executive",
+    "salary": 21200,
+    "raiseEligible": false,
+}
+console.log(q1e1,q1e2,q1e3)
 
-//Problem 5;
-for(employee of obj.employees){
-    if(employee.raise)
-    {
-        console.log("old "+employee.salary);
-        employee.salary *= 1.1;
-        employee.raise = false;
-        console.log("new "+employee.salary);
-    }
-};
 
-//Problem 6;
-const wfh = ['Anna','Sam'];
-for(employee of obj.employees){
-    if(wfh.includes(employee.name)){
-        employee.wfh = true;
+console.log("Question 2")
+const q2comp = {
+    "companyName": "Tech Stars",
+    "website": "www.techstars.site",
+    "employees": [
+        {
+            "name": "Sam",
+            "department": "Tech",
+            "designation": "Manager",
+            "salary": 40000,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Mary",
+            "department": "Finance",
+            "designation": "Trainee",
+            "salary": 18500,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Bill",
+            "department": "HR",
+            "designation": "Executive",
+            "salary": 21200,
+            "raiseEligible": false,
+        },
+    ],
+}
+console.log(q2comp)
+
+console.log("Question 3")
+const q3comp = {
+    "companyName": "Tech Stars",
+    "website": "www.techstars.site",
+    "employees": [
+        {
+            "name": "Sam",
+            "department": "Tech",
+            "designation": "Manager",
+            "salary": 40000,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Mary",
+            "department": "Finance",
+            "designation": "Trainee",
+            "salary": 18500,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Bill",
+            "department": "HR",
+            "designation": "Executive",
+            "salary": 21200,
+            "raiseEligible": false,
+        },
+        {
+            "name": "Anna",
+            "department": "Tech",
+            "designation": "Executive",
+            "salary": 25600,
+            "raiseEligible": false,
+        },
+    ],
+}
+console.log(q3comp)
+
+
+console.log("Question 4")
+var q4totalSal = 0;
+for(i=0; i < q3comp.employees.length; i++){
+    // console.log("salary of", q3comp.employees[i].name, ":", q3comp.employees[i].salary)
+    q4totalSal += q3comp.employees[i].salary;
+}
+console.log("Total salary: ", q4totalSal)
+
+
+console.log("Question 5")
+const q5comp = {
+    "companyName": "Tech Stars",
+    "website": "www.techstars.site",
+    "employees": [
+        {
+            "name": "Sam",
+            "department": "Tech",
+            "designation": "Manager",
+            "salary": 40000,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Mary",
+            "department": "Finance",
+            "designation": "Trainee",
+            "salary": 18500,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Bill",
+            "department": "HR",
+            "designation": "Executive",
+            "salary": 21200,
+            "raiseEligible": false,
+        },
+        {
+            "name": "Anna",
+            "department": "Tech",
+            "designation": "Executive",
+            "salary": 25600,
+            "raiseEligible": false,
+        },
+    ],
+}
+for(i=0; i < q5comp.employees.length; i++){
+    if(q5comp.employees[i].raiseEligible){
+        // console.log(q5comp.employees[i].name, "gets a raise!");
+        q5comp.employees[i].salary += q5comp.employees[i].salary * .1;
+        q5comp.employees[i].raiseEligible = false;
     }
-    else{
-        employee.wfh = false;
+    // console.log(q5comp.employees[i].name, ":", q5comp.employees[i].salary);
+}
+console.log(q5comp)
+
+
+console.log("Question 6")
+const q6comp = {
+    "companyName": "Tech Stars",
+    "website": "www.techstars.site",
+    "employees": [
+        {
+            "name": "Sam",
+            "department": "Tech",
+            "designation": "Manager",
+            "salary": 44000,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Mary",
+            "department": "Finance",
+            "designation": "Trainee",
+            "salary": 20350,
+            "raiseEligible": true,
+        },
+        {
+            "name": "Bill",
+            "department": "HR",
+            "designation": "Executive",
+            "salary": 21200,
+            "raiseEligible": false,
+        },
+        {
+            "name": "Anna",
+            "department": "Tech",
+            "designation": "Executive",
+            "salary": 25600,
+            "raiseEligible": false,
+        },
+    ],
+}
+q6wfh = ['Anna', 'Sam'];
+for(i=0; i < q6comp.employees.length; i++){
+    if(q6comp.employees[i].name == q6wfh[0] || q6comp.employees[i].name == q6wfh[1]){
+        q6comp.employees[i].wfh = true;
     }
-};
-console.log(obj.employees);
+    else {
+        q6comp.employees[i].wfh = false;
+    }
+}
+console.log(q6comp)
