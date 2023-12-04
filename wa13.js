@@ -1,112 +1,76 @@
-const employees = [
+var obj = new Object();
+//Problem 1
+
+var Sam = new Object();
+var Mary = new Object();
+var Bill = new Object();
+Sam.name = "Sam";
+Sam.department = "Tech";
+Sam.designation = "Manager";
+Sam.salary = 40000;
+Sam.raise = true;
+
+Mary.name = "Mary";
+Mary.department = "Finance";
+Mary.designation = "Trainee";
+Mary.salary = 18500;
+Mary.raise = true;
+
+Bill.name = "Bill";
+Bill.department = "HR";
+Bill.designation = "Executive";
+Bill.salary = 21200;
+Bill.raise = false;
+
+console.log(Sam);
+console.log(Mary);
+console.log(Bill);
+
+//Problem 2
+obj.companyName = "Tech Stars";
+obj.website = "www.techstars.site";
+obj.employees = [Sam,Mary,Bill];
+
+console.log(obj);
+
+//Problem 3
+var Anna = new Object();
+Anna.name = "Anna";
+Anna.department = "Tech";
+Anna.designation = "Executive";
+Anna.salary = 25600;
+Anna.raise = false;
+
+obj.employees.push(Anna);
+
+console.log(obj);
+
+//Probelm 4
+var total = 0;
+for(employee of obj.employees){
+    total += employee.salary;
+}
+console.log(total);
+
+//Problem 5;
+for(employee of obj.employees){
+    if(employee.raise)
     {
-      "firstName": "Sam",
-      "department": "Tech",
-      "designation": "Manager",
-      "salary": 40000,
-      "raiseEligible": true
-    },
-    {
-      "firstName": "Mary",
-     "department": "Finance",
-      "designation": "Trainee",
-      "salary": 18500,
-      "raiseEligible": true
-    },
-    {
-      "firstName": "Bill",
-      "department": "HR",
-      "designation": "Executive",
-      "salary": 21200,
-      "raiseEligible": false
-    },
-    ];
-    console.log("Question 1");
-    console.log(employees);
-
-
-const companyDetails = {
-    companyName: "Tech Stars",
-    website: "www.techstars.site",
-    employees: employees}
-
-    console.log("Question 2");
-    console.log(companyDetails);
-
-
-const staff = [
-        {
-            "firstName": "Sam",
-            "department": "Tech",
-            "designation": "Manager",
-            "salary": 40000,
-            "raiseEligible": true
-          },
-          {
-            "firstName": "Mary",
-           "department": "Finance",
-            "designation": "Trainee",
-            "salary": 18500,
-            "raiseEligible": true
-          },
-          {
-            "firstName": "Bill",
-            "department": "HR",
-            "designation": "Executive",
-            "salary": 21200,
-            "raiseEligible": false
-          },
-        {
-            "firstName": "Anna",
-            "department": "Tech",
-            "designation": "Executive",
-            "salary": 25600,
-            "raiseEligible": false
-        }
-    ];
-
-    console.log("Question 3");
-    console.log(staff);
-
-
-function totalSalary(staff){
-        let totalSalary = 0;
-
-    for(employee of staff){
-        totalSalary += employee.salary;
+        console.log("old "+employee.salary);
+        employee.salary *= 1.1;
+        employee.raise = false;
+        console.log("new "+employee.salary);
     }
-   return totalSalary;
-   }
-    console.log("Question 4");
-    console.log(totalSalary(staff));
+};
 
-
-function updateSalary() {
-    staff.forEach((e) => {
-      if (e.raiseEligible) {
-        e.salary = e.salary * 1.1;
-        e.raiseEligible = false;
-      };
-    });
-  }
-
-  updateSalary();
-
-    console.log("Question 5");
-    console.log(staff);
-
-
-const workFromHome = ["Anna", "Sam"];
-
-function workHome(){
-    staff.forEach((e) => {
-        if (workFromHome.includes(e.firstName)) {
-        e.workFromHome = true;
+//Problem 6;
+const wfh = ['Anna','Sam'];
+for(employee of obj.employees){
+    if(wfh.includes(employee.name)){
+        employee.wfh = true;
     }
-    })
-  }
-
-  workHome();
-
-    console.log("Question 6");
-    console.log(staff);
+    else{
+        employee.wfh = false;
+    }
+};
+console.log(obj.employees);

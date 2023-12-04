@@ -48,7 +48,7 @@ function copyQuote() {
       alert(`Quote copied to clipboard: ${quote}`);
     })
     .catch(err => {
-      console.error('Failed to copy quote to clipboard', err);
+      console.error(', err);
     });
   }
   
