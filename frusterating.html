@@ -149,7 +149,7 @@
 
     if (phoneInput.trim() !== "") {
       
-      outputText.innerHTML = `Thank you for participating in the laughter zone! Stay tuned for jokes and giggles! You entered: ${phoneInput}`;
+      outputText.innerHTML = `Welcome to Hell! You entered: ${phoneInput}`;
       phoneNumber = phoneInput;
       
       
@@ -173,9 +173,9 @@
       var userGuess = parseInt(guessInput, 10);
 
       if (userGuess === secretNumber) {
-        outputText.innerHTML = `Congratulations! You guessed the secret number! Your phone number is: ${phoneNumber}`;
+        outputText.innerHTML = `Congratulations! You Wizard! You guessed the secret number! Your phone number is: ${phoneNumber}`;
       } else {
-        outputText.innerHTML = "Oops! Try again. That's not the secret number.";
+        outputText.innerHTML = "Ya dunce. That's not the secret number.";
         // Hide everything if the guess is incorrect
         document.getElementById("humorousPhoneForm").style.display = "none";
       }
