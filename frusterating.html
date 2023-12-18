@@ -6,8 +6,9 @@
   <title>Moving Phone Number Input</title>
   <link rel="stylesheet" href="frusterating.css">
   <style>
-    
+
     body {
+
       font-family: 'Comic Sans MS', cursive, sans-serif;
       display: flex;
       align-items: center;
@@ -16,7 +17,9 @@
       margin: 0;
       animation: moveAround 0.5s infinite alternate ease-in-out;
       background-color: #f0f0f0;
+  
     }
+  
 
     @keyframes moveAround {
       0% {
@@ -43,7 +46,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      animation: moveAround 0.5s infinite alternate ease-in-out;
+      animation: moveAround 1s infinite alternate ease-in-out;
     }
 
     #phoneInput {
@@ -82,8 +85,117 @@
       font-size: 16px;
       background-color: #2196f3;
       color: #fff;
-      border:#2196f3;
-      <script>"fusterating.js"</script> }
+      border:
+
+
+      none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      animation: changeBackgroundColor 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes changeBackgroundColor {
+      0% {
+        background-color: #f0f0f0;
+      }
+      25% {
+        background-color: #ffee58;
+      }
+      50% {
+        background-color: #64b5f6;
+      }
+      75% {
+        background-color: #ff8a65;
+      }
+      100% {
+        background-color: #b2ff59;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="humorousPhoneForm">
+  <p id="funText">Enter your phone number and embark on a journey to the laughter zone!</p>
+  <label for="phoneInput">Phone Number:</label>
+  <input type="tel" id="phoneInput" placeholder="e.g., 555-LOL-HAHA">
+  <button id="submitBtn" onclick="submitForm()">Submit</button>
+
+  <div id="gameSection">
+    <p>Guess the secret number (between 1 and 10):</p>
+    <input type="number" id="guessInput" placeholder="Your guess">
+    <button id="playBtn" onclick="playGame()">Play</button>
+  </div>
+
+  <div id="output"></div>
+</div>
+<script>"frusterating.js"</script>
+<script>
+  var secretNumber;
+  var phoneNumber;
+
+  function submitForm() {
+    var phoneInput = document.getElementById("phoneInput").value;
+    var outputText = document.getElementById("output");
+
+    if (phoneInput.trim() !== "") {
+      
+      outputText.innerHTML = `Thank you for participating in the laughter zone! Stay tuned for jokes and giggles! You entered: ${phoneInput}`;
+      phoneNumber = phoneInput;
+      
+      
+      document.getElementById("gameSection").style.display = "block";
+      
+      
+      secretNumber = Math.floor(Math.random() * 10) + 1;
+
+      // Fetch data from a sample API (JSONPlaceholder)
+      fetchData();
+    } else {
+      alert("Please enter a phone number!");
+    }
+  }
+
+  function playGame() {
+    var guessInput = document.getElementById("guessInput").value;
+    var outputText = document.getElementById("output");
+
+    if (guessInput !== "" && !isNaN(guessInput)) {
+      var userGuess = parseInt(guessInput, 10);
+
+      if (userGuess === secretNumber) {
+        outputText.innerHTML = `Congratulations! You guessed the secret number! Your phone number is: ${phoneNumber}`;
+      } else {
+        outputText.innerHTML = "Oops! Try again. That's not the secret number.";
+        // Hide everything if the guess is incorrect
+        document.getElementById("humorousPhoneForm").style.display = "none";
+      }
+    } else {
+      alert("Please enter a valid number for your guess!");
+    }
+  }
+
+  function fetchData() {
+    // Example: Fetch data from JSONPlaceholder API
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+    
+  }
+</script>
+
+</body>
+</html>
 
       
 
