@@ -16,9 +16,9 @@ function frustrateUser() {
 }
 
 function shakeElement(element) {
-  var interval = 50;
-  var distance = 5;
-  var times = 4;
+  var interval = 30;
+  var distance = 20;
+  var times = 10;
 
   for (var i = 0; i < times; i++) {
     setTimeout(function () {
