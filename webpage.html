@@ -17,7 +17,7 @@
 
         body {
             margin: 0;
-            overflow: hidden; /* Prevent background scrolling */
+            cursor: default; /* Hide default cursor */
         }
 
         .background {
@@ -31,26 +31,23 @@
 
         .background .shape {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 10px; /* Adjust ball size here */
+            height: 10px; /* Adjust ball size here */
             border-radius: 50%;
-            animation: move 5s infinite linear;
-        }
-
-        @keyframes move {
-            0% { transform: translate(0, 0); background-color: #f00; }
-            25% { transform: translate(100vw, 0); background-color: #0f0; }
-            50% { transform: translate(100vw, 100vh); background-color: #00f; }
-            75% { transform: translate(0, 100vh); background-color: #f0f; }
-            100% { transform: translate(0, 0); background-color: #f00; }
+            background-color: rgba(Math.random() * 256, Math.random() * 256, Math.random() * 256, 0.5); /* Random colors */
         }
     </style>
 </head>
 <body>
     <div class="background">
-        <span class="shape" style="top: 0; left: 0;"></span>
-        <span class="shape" style="top: 20vh; left: 50vw;"></span>
-        </div>
+        <script>
+            for (let i = 0; i < 200; i++) { // Adjust number of balls here (more = slower performance)
+                const shape = document.createElement('span');
+                shape.classList.add('shape');
+                document.querySelector('.background').appendChild(shape);
+            }
+        </script>
+    </div>
     <h1 id="message"></h1>
     <script>
         const message = "hi there";
@@ -65,6 +62,33 @@
         }
 
         typeWriter();
+
+        // Cursor tracking for ball movement
+        let cursorX = window.innerWidth / 2;
+        let cursorY = window.innerHeight / 2;
+
+        document.addEventListener('mousemove', (event) => {
+            cursorX = event.clientX;
+            cursorY = event.clientY;
+        });
+
+        const shapes = document.querySelectorAll('.shape');
+
+        function moveBalls() {
+            shapes.forEach(shape => {
+                const distanceX = cursorX - shape.offsetLeft;
+                const distanceY = cursorY - shape.offsetTop;
+                const moveStrength = 2; // Adjust movement strength here
+
+                // Update position based on distance from cursor
+                shape.style.left = `${shape.offsetLeft + distanceX / moveStrength}px`;
+                shape.style.top = `${shape.offsetTop + distanceY / moveStrength}px`;
+            });
+
+            requestAnimationFrame(moveBalls);
+        }
+
+        moveBalls();
     </script>
 </body>
 </html>
