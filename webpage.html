@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi There Animation</title>
+    <style>
+        #message {
+            font-size: 2em;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="message"></h1>
+    <script>
+        const message = "hi there";
+        let displayedText = "";
+
+        function typeWriter() {
+            if (displayedText.length < message.length) {
+                displayedText += message.charAt(displayedText.length);
+                document.getElementById("message").innerHTML = displayedText;
+                setTimeout(typeWriter, 50); // Adjust speed here (lower = faster)
+            }
+        }
+
+        typeWriter();
+    </script>
+</body>
+</html>
